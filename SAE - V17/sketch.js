@@ -192,8 +192,7 @@
     }
 
     function draw() {
-        clear(); // Effacer le contenu du canvas
-        // Cacher le slider lorsque gameState !== "settings"
+        clear();
         if (gameState !== "settings") {
             volumeSlider.hide();
         }
@@ -213,7 +212,7 @@
             if (indice1.alpha === 0 && collided(player.pos.x, player.pos.y, player.w, player.h, wintile.pos.x, wintile.pos.y, wintile.w, wintile.h)) {
                 gameState = "win";
             }
-            // Dessiner l'image de fond en premier
+          
             image(room, width / 2, height / 2, width, height);
             player.update(); // Mettre à jour la position du joueur
             player.draw(); // Dessiner le joueur
@@ -238,11 +237,10 @@
             if (indice2.alpha === 0 && collided(player.pos.x, player.pos.y, player.w, player.h, wintile.pos.x, wintile.pos.y, wintile.w, wintile.h)) {
                 gameState = "win";
             }
-            // Dessiner l'image de fond en premier
+          
             image(room2, width / 2, height / 2, width, height);
-            player.update(); // Mettre à jour la position du joueur
-            bricks.draw(); // Dessiner les briques
-            player.draw(); // Dessiner le joueur
+            bricks.draw(); 
+            player.draw();
             if (showMessage2) {
                 image(imgIndice2, width / 2, height / 2);
 
@@ -265,7 +263,7 @@
             if (indice3.alpha === 0 && collided(player.pos.x, player.pos.y, player.w, player.h, wintile.pos.x, wintile.pos.y, wintile.w, wintile.h)) {
                 gameState = "win";
             }
-            // Dessiner l'image de fond en premier
+        
             image(room3, width / 2, height / 2, width, height);
             player.update(); // Mettre à jour la position du joueur
             bricks.draw(); // Dessiner les briques
@@ -299,7 +297,7 @@
                 textSize(12);
                 text("Appuyer sur 'e' pour fouiller", width/2 - 100, height/2 +120);
               }
-            // Dessiner l'image de fond en premier
+          
             image(room4, width / 2, height / 2, width, height);
             player.update(); // Mettre à jour la position du joueur
             bricks.draw(); // Dessiner les briques
@@ -334,7 +332,6 @@
         }
 
         function mouseDragged() {
-            // Mettre à jour le volume du son lorsque le slider est déplacé
             mySound.setVolume(volumeSlider.value());
         }
 
