@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Jolly+Lodger&display=swap');
+
+@layer base {
+  
+      :root {
+        --ff-jolly : "Jolly Lodger", system-ui;
+        --vert : rgba(89, 135, 126, 100%);
+        --blanc : rgba(229, 237, 235,100% );
+        --noir : rgba(38,  38, 38, 100%);
+
+        --fond: url('/public/asset/banniere.png');
+      }
+    } 
